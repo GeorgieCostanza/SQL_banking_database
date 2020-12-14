@@ -1,0 +1,77 @@
+CREATE TABLE CUSTOMERS (
+    customer_id int,
+    account_id int,
+    customer_adress varchar(155),
+    customer_adress2 varchar(155),
+    customer_first_name varchar(155),
+    customer_last_name varchar(155),
+    city varchar(155),
+    email varchar(155),
+    cell_phone int,
+    home_phone int,
+    user_login_id int
+    );
+    
+CREATE TABLE USER_LOGIN (
+    user_login_id int,
+    user_password varchar(155)
+    );
+    
+CREATE TABLE LOGIN_ACCOUNT(
+    user_login_id int,
+    account_id int);
+    
+CREATE TABLE USER_SECURITY_ANSWERS(
+    user_login_id int,
+    user_security_answer varchar(155),
+    user_security_question_id int);
+    
+CREATE TABLE  USER_SECURITY_QUESTIONS(
+    user_security_question_id int,
+    user_security_question varchar(155)
+    );
+    
+CREATE TABLE EMPLOYEE(
+    employee_id int,
+    employee_first_name varchar(155),
+    employee_last_name varchar(155),
+    employee_manager varchar(155),
+    employee_position varchar(155)
+    );
+    
+CREATE TABLE CUSTOMER_ACCOUNT(
+    account_id int,
+    customer_id int);
+
+CREATE TABLE ACCOUNT (
+    account_id int,
+    current_balance int,
+    account_type_id int,
+    account_status_type_id int,
+    interest_savings_rate int
+    );
+    
+create table ACCOUNT_TYPE(
+    account_type_id int,
+    account_type_description varchar(155)
+    );
+    
+create table ACCOUNT_STATUS_TYPE(
+    account_status_type_id int,
+    account_status_type_description varchar(155)
+    );
+    
+create table savings_interest_rate(
+    interest_saving_rate_id int,
+    interest_rate_value int,
+    interest_rate_description varchar(20));
+    
+CREATE TABLE TRANSACTION_LOG(
+    transaction_id int,
+    transacton_date date,
+    transaction_type_id int,
+    transaction_amount int,
+    account_id int,
+    customer_id int,
+    employee_id int,
+    user_login_id int);
